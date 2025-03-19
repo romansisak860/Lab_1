@@ -40,6 +40,10 @@ def caesar_cipher(text, alphabet, key):
 def main():
     file_content = read_file("2.txt")
 
+    # Підрахунок загальної кількості символів
+    total_chars = len(file_content)
+    print(f"Загальна кількість символів у файлі: {total_chars}\n")
+
     print(f"Символи (по спаданню частоти):\n")
     char_counts = count_chars(file_content)
     for key, value in sort_map_by_value(char_counts).items():
@@ -73,6 +77,10 @@ def main():
     decoded_char_counts = count_chars(decoded_caesar)
     for key, value in sort_map_by_value(decoded_char_counts).items():
         print(f"{key}: {value}")
+
+    # Підрахунок загальної кількості символів після дешифрування
+    total_decoded_chars = len(decoded_caesar)
+    print(f"\nЗагальна кількість символів після дешифрування: {total_decoded_chars}")
 
 
 if __name__ == "__main__":
